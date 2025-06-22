@@ -1,3 +1,5 @@
+#保存在basicsr/data目录下
+
 import os
 import numpy as np
 from omegaconf import OmegaConf
