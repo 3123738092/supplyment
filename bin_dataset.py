@@ -18,15 +18,15 @@ from basicsr.utils import FileClient, imfrombytes, img2tensor, voxel2voxeltensor
 from torch.utils.data.dataloader import default_collate
 
 # 从read_data.py中导入必要的函数
-from read_data import read_aps, read_evs, process_isp
+from basicsr.data.read_data import read_aps, read_evs, process_isp
 
 
-class GoProSingleImageEventDataset(data.Dataset):
+class BinSingleImageEventDataset(data.Dataset):
     """GoPro dataset for training recurrent networks for blurry image interpolation.
     """
 
     def __init__(self, opt):
-        super(GoProSingleImageEventDataset, self).__init__()
+        super(BinSingleImageEventDataset, self).__init__()
         self.opt = opt
         self.dataroot = Path(opt['dataroot'])
         self.m = opt['num_end_interpolation']
